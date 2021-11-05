@@ -113,8 +113,8 @@ internal class MainImageAdapter(context: Context, internal val spanCount: Int) :
 
     override fun getItemCount() = itemList.size
 
-    override fun getHeaderPositionForItem(position: Int): Int {
-        var tempPosition = position
+    override fun getHeaderPositionForItem(itemPosition: Int): Int {
+        var tempPosition = itemPosition
         var headerPosition = 0
         do {
             if (isHeader(tempPosition)) {
