@@ -196,7 +196,7 @@ class PixFragment(private val resultCallback: ((PixEventCallback.Results) -> Uni
         }
         model.longSelection.observe(requireActivity()) {
             //Log.e(TAG, "longSelection is now changed to  $it")
-            binding.longSelectionStatus(it)
+            binding.longSelectionStatus(it, options)
             if (mBottomSheetBehavior?.state ?: BottomSheetBehavior.STATE_COLLAPSED == BottomSheetBehavior.STATE_COLLAPSED) {
                 binding.gridLayout.sendButtonStateAnimation(it)
             }

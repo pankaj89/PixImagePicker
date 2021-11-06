@@ -89,6 +89,12 @@ internal fun FragmentPixBinding.setupClickControls(
         val videoCounterHandler = Handler(Looper.getMainLooper())
         lateinit var videoCounterRunnable: Runnable
 
+        if (options.count > 1) {
+            gridLayout.selectionCheck.show()
+        } else {
+            gridLayout.selectionCheck.hide()
+        }
+
         setOnClickListener {
             if (options.count <= model.selectionListSize) {
                 gridLayout.sendButton.context.toast(model.selectionListSize)
@@ -244,19 +250,22 @@ internal fun FragmentPixBinding.setupClickControls(
 }
 
 fun FragmentPixBinding.longSelectionStatus(
-    enabled: Boolean
+    enabled: Boolean,
+    options: Options
 ) {
     val colorPrimaryDark = root.context.color(R.color.primary_color_pix)
     val colorSurface = root.context.color(R.color.surface_color_pix)
 
+    val selectionAllowed = options.count > 1
+
     if (enabled) {
-        gridLayout.selectionCheck.hide()
+        if (selectionAllowed) gridLayout.selectionCheck.hide()
         gridLayout.selectionCount.setTextColor(colorSurface)
         gridLayout.topbar.setBackgroundColor(colorPrimaryDark)
         DrawableCompat.setTint(gridLayout.selectionBack.drawable, colorSurface)
         DrawableCompat.setTint(gridLayout.selectionCheck.drawable, colorSurface)
     } else {
-        gridLayout.selectionCheck.show()
+        if (selectionAllowed) gridLayout.selectionCheck.show()
         DrawableCompat.setTint(gridLayout.selectionBack.drawable, colorPrimaryDark)
         DrawableCompat.setTint(gridLayout.selectionCheck.drawable, colorPrimaryDark)
         gridLayout.topbar.setBackgroundColor(colorSurface)
