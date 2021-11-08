@@ -21,7 +21,7 @@ internal fun FragmentActivity.setup(
 
     var localState = BottomSheetBehavior.STATE_COLLAPSED
     bottomSheetBehavior?.apply {
-        peekHeight = this@setup.toPx(194f).toInt()
+//        peekHeight = this@setup.toPx(194f).toInt()
         addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {

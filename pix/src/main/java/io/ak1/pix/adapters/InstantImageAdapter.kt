@@ -15,9 +15,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.request.RequestOptions
 import io.ak1.pix.databinding.InitalImageBinding
-import io.ak1.pix.helpers.hide
-import io.ak1.pix.helpers.show
-import io.ak1.pix.helpers.toPx
+import io.ak1.pix.helpers.*
 import io.ak1.pix.interfaces.OnSelectionListener
 import io.ak1.pix.models.Img
 import java.util.*
