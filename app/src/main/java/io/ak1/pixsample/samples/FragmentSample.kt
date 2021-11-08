@@ -30,7 +30,7 @@ class FragmentSample : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment_sample)
         setupScreen()
-        supportActionBar?.hide()
+//        supportActionBar?.hide()
         showResultsFragment()
     }
 

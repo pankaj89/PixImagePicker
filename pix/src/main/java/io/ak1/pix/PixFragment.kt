@@ -66,25 +66,11 @@ class PixFragment(private val resultCallback: ((PixEventCallback.Results) -> Uni
     private var scope = CoroutineScope(Dispatchers.IO)
     private var colorPrimaryDark = 0
 
-    override fun onResume() {
-        super.onResume()
-        if (mBottomSheetBehavior?.state == BottomSheetBehavior.STATE_COLLAPSED) {
-            Handler(Looper.getMainLooper()).postDelayed({
-                try {
-                    requireActivity().hideStatusBar()
-                } catch (e: IllegalStateException) {
-                    e.message?.let { Log.e("PixFragment", it) }
-                }
-            }, 200)
-        }
-    }
-
     override fun onPause() {
         super.onPause()
         if (mBottomSheetBehavior?.state != BottomSheetBehavior.STATE_COLLAPSED) {
             mBottomSheetBehavior?.state = BottomSheetBehavior.STATE_COLLAPSED
         }
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

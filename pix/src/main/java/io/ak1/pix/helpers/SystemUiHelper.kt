@@ -17,11 +17,6 @@ import io.ak1.pix.utility.WIDTH
 
 
 fun Activity.setupScreen() {
-    /*WindowCompat.setDecorFitsSystemWindows(window, false)
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-        window.attributes.layoutInDisplayCutoutMode =
-            WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
-    }*/
     getScreenSize()
 }
 
